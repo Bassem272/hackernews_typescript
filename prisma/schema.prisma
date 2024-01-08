@@ -2,9 +2,14 @@
 // learn more about it in the docs: https://pris.ly/d/prisma-schema
 
 // 1
+// datasource db {
+//   provider = "sqlite"
+//   url      = "file:./dev.db"
+// }
+// after migration from sqlite to postgresql --->
 datasource db {
-  provider = "sqlite"
-  url      = "file:./dev.db"
+  provider = "postgresql"
+  url = env("DATABASE_URL")
 }
 
 // 2
