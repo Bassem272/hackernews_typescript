@@ -1,0 +1,2 @@
+# Empty Dockerfile
+FROM scratch

@@ -13,6 +13,14 @@ services:
       - postgres:/var/lib/postgresql/data
     ports:
       - '5432:5432'         # 4
-
+  backend:
+    build:
+      context: .
+      dockerfile: Dockerfile  # Adjust this if your Dockerfile has a different name or is in a different directory
+    restart: always
+    environment:
+      - DATABASE_URL=postgres://postgres:postgres@postgres:5432/  # This URL should match your PostgreSQL service configuration
+    ports:
+      - '3000:3000'  # Adjust this if your backend runs on a different port
 volumes:
   postgres:
